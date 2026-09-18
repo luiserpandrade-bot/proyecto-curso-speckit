@@ -1,0 +1,16 @@
+.venv/
+.git/
+.github/
+.agents/
+.specify/
+specs/
+tests/
+.pytest_cache/
+__pycache__/
+*.pyc
+.coverage
+.report.json
+.coverage.json
+gastos.db
+.env
+.pre-commit.log

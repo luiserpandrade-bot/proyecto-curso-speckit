@@ -2,7 +2,6 @@
 
 import asyncio
 
-import pytest
 
 from app.mcp.auth import JWTTokenVerifier
 from app.security import crear_access_token

@@ -1,5 +1,5 @@
-from app.schemas.usuario import UsuarioCreate, UsuarioResponse
-from app.schemas.gasto import GastoCreate, GastoResponse
+from app.schemas.usuario import UsuarioResponse
+from app.schemas.gasto import GastoCreate
 from app.models.usuario import Usuario
 
 

@@ -17,8 +17,8 @@ def test_repositorio_gastos_aislamiento_por_usuario():
 
     # Guardar gastos para ambos usuarios
     g1 = gastos_repo.guardar(db, u1.id, "Almuerzo U1", 30.0, "comida")
-    g2 = gastos_repo.guardar(db, u1.id, "Metro U1", 10.0, "transporte")
-    g3 = gastos_repo.guardar(db, u2.id, "Cena U2", 80.0, "comida")
+    gastos_repo.guardar(db, u1.id, "Metro U1", 10.0, "transporte")
+    gastos_repo.guardar(db, u2.id, "Cena U2", 80.0, "comida")
 
     # Verificar retorno tipo dict
     assert isinstance(g1, dict)
