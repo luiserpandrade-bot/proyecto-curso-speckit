@@ -1,0 +1,12 @@
+{
+  "pre-commit-tests": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash(git commit*)",
+        "type": "command",
+        "command": "./hooks/pre-commit-check.sh",
+        "timeout": 60
+      }
+    ]
+  }
+}
