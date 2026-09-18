@@ -8,8 +8,11 @@ from app.models.usuario import Usuario
 
 @pytest.fixture
 def client():
-    with TestClient(app, raise_server_exceptions=False) as test_client:
-        yield test_client
+    # Sin `with`: no se entra al lifespan. session_manager.run() solo admite una
+    # llamada por instancia, y test_api_gastos.py ya la consume. Estos tests
+    # cortan en el middleware de autenticación, antes del session manager.
+    test_client = TestClient(app, raise_server_exceptions=False)
+    yield test_client
     app.dependency_overrides.clear()
 
 
