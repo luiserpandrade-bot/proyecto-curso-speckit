@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta, timezone
+from app.config import settings
 import pytest
 import jwt
 
@@ -37,7 +38,7 @@ def test_token_expirado_falla():
     exp_pasada = datetime.now(timezone.utc) - timedelta(minutes=5)
     token_expirado = jwt.encode(
         {"sub": "usuario@test.com", "exp": exp_pasada},
-        "2b8e505558d5c9308916df4f317261ca4671ff0dcf56dc33e1de30f93c7f75c7",
+        settings.secret_key,
         algorithm=ALGORITHM,
     )
     with pytest.raises(jwt.ExpiredSignatureError):
